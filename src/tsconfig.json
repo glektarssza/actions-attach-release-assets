@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "noEmit": false,
+        "types": []
+    },
+    "exclude": ["node_modules"]
+}
