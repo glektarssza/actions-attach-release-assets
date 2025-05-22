@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-action.json
+name: Attach Release Assets
+description: Attach assets to a GitHub release.
+author: G'lek Tarssza
+branding:
+  icon: clipboard
+  color: yellow
+inputs:
+  artifact-ids:
+    description: |
+      A set of artifact names to attach to the release.
+
+      This can take one of the following forms:
+       * An artifact ID.
+       * A multi-line string of artifact IDs, one item per line.
+
+      One of `assets`, `artifact-names`, or `artifact-ids` must be provided.
+    required: false
+  artifact-names:
+    description: |
+      A set of artifact names to attach to the release.
+
+      This can take one of the following forms:
+       * An artifact name.
+       * A multi-line string of artifact names, one item per line.
+
+      One of `assets`, `artifact-names`, or `artifact-ids` must be provided.
+    required: false
+  assets:
+    description: |
+      A set of assets to attach to the release.
+
+      This can take one of the following forms:
+       * A path to a file, in which case it will be attached to the release.
+       * A path to a directory, in which case all the assets in that directory
+         will be attached to the release.
+       * A glob pattern, in which case any files matching that pattern will be
+         attached to the release.
+       * A multi-line string containing of any of the above three item types,
+         one item per line.
+
+      One of `assets`, `artifact-names`, or `artifact-ids` must be provided.
+    required: false
+  release-id:
+    description: |
+      The ID of the release to attach assets to.
+
+      Defaults to the value held in the `github.event.release.id` context value,
+      if present.
+    required: false
+  github-token:
+    description: |
+      The token to use to make authenticated requests to the GitHub APIs.
+
+      Defaults to the value held in the `secrets.GITHUB_TOKEN` context value, if
+      present.
+    required: false
+runs:
+  using: node20
+  main: ./dist/index.js
