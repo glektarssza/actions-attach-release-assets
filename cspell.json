@@ -1,0 +1,21 @@
+{
+    "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+    "version": "0.2",
+    "id": "root",
+    "name": "Project",
+    "description": "Project-level spell checker configuration.",
+    "enabled": true,
+    "caseSensitive": false,
+    "dictionaryDefinitions": [
+        {
+            "name": "project",
+            "description": "Project-specific custom dictionary.",
+            "type": "S",
+            "path": "./.cspell/dictionaries/project.txt"
+        }
+    ],
+    "dictionaries": ["project"],
+    "userWords": [],
+    "words": [],
+    "useGitignore": true
+}
