@@ -1,7 +1,17 @@
 {
     "compilerOptions": {
+        "paths": {
+            "@lib": ["../lib"],
+            "@lib/*": ["../lib/*"]
+        },
         "noEmit": false,
-        "types": []
+        "resolveJsonModule": true,
+        "types": ["node"]
     },
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules"],
+    "references": [
+        {
+            "path": "../lib"
+        }
+    ]
 }
